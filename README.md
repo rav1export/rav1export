@@ -1,4 +1,6 @@
-### Hi there 👋
+### Hi I'm Rav 👋
+
+**Software Engineer @ 1Export**
 
 <!--
 **rav1export/rav1export** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.

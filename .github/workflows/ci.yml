@@ -19,7 +19,17 @@ on:
 
 jobs:
   dev_build:
+    if: ${{ github.ref_name !== 'main' }}
     runs-on: ubuntu-latest
+	
     steps:
+      - name: Echo branch name
+        run: echo "${{ github.ref_name }}"
+		
+  production_build:
+    if: ${{ github.ref_name == 'main' }}
+	  runs-on: ubuntu-latest
+	
+	  steps:
       - name: Echo branch name
         run: echo "${{ github.ref_name }}"

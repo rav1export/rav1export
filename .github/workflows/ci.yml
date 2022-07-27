@@ -20,4 +20,4 @@ on:
 jobs:
   steps:
     - name: Echo branch name
-	  - run: echo "${{ github.ref_name }}"
+    - run: echo "${{ github.ref_name }}"

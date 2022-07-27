@@ -19,6 +19,7 @@ on:
 
 jobs:
   dev_build:
+    runs-on: ubuntu-latest
     steps:
       - name: Echo branch name
         run: echo "${{ github.ref_name }}"

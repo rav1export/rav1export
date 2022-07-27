@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: false
+        default: 'info' 
+        type: choice
+        options:
+        - info
+        - warning
+        - debug
+  push:
+    branches: [ main,develop,** ]
+  pull_request:
+    branches: [ main,develop,** ]
+
+jobs:
+  steps:
+    - name: Echo branch name
+	  - run: echo "${{ github.ref_name }}"

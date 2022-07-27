@@ -18,6 +18,7 @@ on:
     branches: [ main,develop,'**' ]
 
 jobs:
-  steps:
-    - name: Echo branch name
-    - run: echo "${{ github.ref_name }}"
+  dev_build:
+    steps:
+      - name: Echo branch name
+	    - run: echo "${{ github.ref_name }}"

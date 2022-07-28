@@ -19,7 +19,7 @@ on:
 
 jobs:
   dev_build:
-    if: ${{ !(contains(github.ref_name, 'main')) }}
+    if: ${{ !(github.ref_name == 'main') }}
     runs-on: ubuntu-latest
     steps:
       - name: Echo branch name

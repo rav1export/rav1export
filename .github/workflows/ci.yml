@@ -23,7 +23,7 @@ on:
 
 jobs:
   dev_build:
-    if: ${{ !(github.ref_name == 'main') || ((inputs.environment != '') || (inputs.environment == 'dev')) }}
+    if: ${{ !(github.ref_name == 'main') && ((inputs.environment != '') || (inputs.environment == 'dev')) }}
     runs-on: ubuntu-latest
     steps:
       - name: Echo branch name
@@ -31,7 +31,7 @@ jobs:
       - name: Echo environment name
         run: echo "${{ inputs.environment }}"
   production_build:
-    if: ${{ (github.ref_name == 'main') || ((inputs.environment != '') || (inputs.environment == 'prod')) }}
+    if: ${{ (github.ref_name == 'main') && ((inputs.environment != '') || (inputs.environment == 'prod')) }}
     runs-on: ubuntu-latest
     steps:
       - name: Echo branch name

@@ -23,7 +23,7 @@ on:
 
 jobs:
   dev_build:
-    if: ${{ !(github.ref_name == 'main') || ((inputs.environment != '') && (inputs.environment == 'dev')) }}
+    if: ${{ (github.ref_name == 'develop') || ((inputs.environment != '') && (inputs.environment == 'dev')) }}
     runs-on: ubuntu-latest
     steps:
       - name: Echo branch name

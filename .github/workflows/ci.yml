@@ -6,7 +6,7 @@ on:
       environment:
         description: 'Environment to run tests against'
         type: environment
-        required: true
+        required: false
       logLevel:
         description: 'Log level'     
         required: false
@@ -16,9 +16,9 @@ on:
         - info
         - warning
         - debug
-   push:
+  push:
      branches: [ main,develop,'**' ]
-   pull_request:
+  pull_request:
      branches: [ main,develop,'**' ]
 
 jobs:

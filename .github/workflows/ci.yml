@@ -16,21 +16,25 @@ on:
         description: 'Environment to run tests against'
         type: environment
         required: true
-  push:
+ push:
     branches: [ main,develop,'**' ]
   pull_request:
     branches: [ main,develop,'**' ]
 
 jobs:
   dev_build:
-    if: ${{ !(github.ref_name == 'main') }}
+    if: ${{ !(github.ref_name == 'main') || (inputs.environment == 'dev') }}}}
     runs-on: ubuntu-latest
     steps:
       - name: Echo branch name
         run: echo "${{ github.ref_name }}"		
+      - name: Echo environment name
+        run: echo "${{ inputs.environment }}"
   production_build:
-    if: ${{ (github.ref_name == 'main') }}
+    if: ${{ (github.ref_name == 'main') || (inputs.environment == 'prod') }}
     runs-on: ubuntu-latest
     steps:
       - name: Echo branch name
         run: echo "${{ github.ref_name }}"
+      - name: Echo environment name
+        run: echo "${{ inputs.environment }}"
